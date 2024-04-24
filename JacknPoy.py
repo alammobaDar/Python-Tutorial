@@ -19,7 +19,7 @@ while True:
         print("You Win!!")
         print(x)
     else:
-        print("Wrong input you Broke ass nigga bitch!!")
+        print("Wrong input you Broke ass nigga bitch!!!")
 
     exit = input("Try again Y/N: ")
     if (exit.upper() != "Y"):
