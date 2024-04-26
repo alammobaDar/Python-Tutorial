@@ -1,18 +1,17 @@
-gender = "girl"
-do = "concern"
+import os
 
-#str.format()
+source = 'sample.txt'
+destination = "C:\\Users\\Admin\\Desktop\\sample.txt"
 
-print("Alam mo ba {0}, pag wala ka dito promise ako {1}".format(gender,do))
+try:
+    if os.path.exists(destination):
+        print("There's such file!")
+    else:
+        os.replace(source,destination)
+        print(source +" was moved")
+except FileNotFoundError:
+    print(source+" was not found")
 
-number = 100983948249284757
-
-print("The number is {:.3f}".format(number)) #limit the decimal numbers by 3, it also rounds off the number
-print("The number is {:,}".format(number)) #format the int values by putting commas every thousands
-print("The number is {:b}".format(number))  #turns into binary
-print("The number is {:o}".format(number))  #turns into octal
-print("The number is {:x}".format(number))  #turns into hex
-print("The number is {:e}".format(number))  #turns into scientific number
 
 
 
