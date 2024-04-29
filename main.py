@@ -1,18 +1,8 @@
-import os
+from Animal import Animal
 
-source = 'sample.txt'
-destination = "C:\\Users\\Admin\\Desktop\\sample.txt"
+Animal1 = Animal("Ben", "Dog", "Black", "Large")
+Animal2 = Animal("Luna", "Panther", "White", "Large")
 
-try:
-    if os.path.exists(destination):
-        print("There's such file!")
-    else:
-        os.replace(source,destination)
-        print(source +" was moved")
-except FileNotFoundError:
-    print(source+" was not found")
-
-
-
-
+Animal1.eat()
+Animal2.sleep()
 
