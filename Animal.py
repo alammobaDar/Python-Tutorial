@@ -1,24 +1,33 @@
+class Prey:
+    def flee(self):
+        print("This animal is fleeing!")
+class Predator:
+    def hunt(self):
+        print("This animal is hunting!")
 
+class Rabbit:
+    def flee(self):
+        print("this rabbit is fleeing")
 
-class Animal:
-    # def __init__(self, Name, Species, Color, Size):
-    #     self.Name = Name
-    #     self.Species = Species
-    #     self.Color = Color
-    #     self.Size = Size
+class Tiger:
+    def hunt(self):
+        print("This tiger is hunting")
 
-    def eat(self):
-        print(self.Name + " the " + self.Species + " is eating ")
+class Fish:
+    def hunt(self):
+        print("The big fish is hunting")
+        return self
+    def flee(self):
+        print("The small fish is fleeing")
+        return self
+fish = Fish()
+rabbit = Rabbit()
+tiger = Tiger()
+prey = Prey()
+predator = Predator()
 
-    def sleep(self):
-        print(self.Name + " the " + self.Species + " is Sleeping ")
-class Mammal(Animal):
-    def reproduction(self):
-        print("Mammals don't lay eggs!")
-class Dog(Mammal):
-    def bark(self):
-        print("The Dog is barking!")
-
-dog = Dog()
-dog.bark()
-dog.reproduction()
+fish.hunt().flee()
+tiger.hunt()
+rabbit.flee()
+prey.flee()
+predator.hunt()
