@@ -7,11 +7,11 @@ class Vehicle(ABC):
 
 class Car(Vehicle):
     def go(self):
-        print("The car is moving!")
+        print("The car is moving!!")
 
 class Boat(Vehicle):
     def go(self):
-        print("The boat is moving!")
+        print("The boat is moving!!")
 
 
 
