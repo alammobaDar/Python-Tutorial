@@ -1,22 +1,28 @@
-#Abstract
-from abc import ABC , abstractmethod
-class Vehicle(ABC):
-    @abstractmethod
-    def go(self):
-        pass
+#Duct typing
+#Object Parameter
 
-class Car(Vehicle):
-    def go(self):
-        print("The car is moving!!")
+class Tiger:
+    def roar(self):
+        print("The Tiger roared!")
 
-class Boat(Vehicle):
-    def go(self):
-        print("The boat is moving!!")
+    def hunt(self):
+        print("The tiger is hunting!!")
+class Lion:
+    def roar(self):
+        print("The Lion roared!")
+
+    def hunt(self):
+        print("The lion is hunting!!")
+
+class Person():
+    def saw(self,tiger):
+        tiger.roar()
+        tiger.hunt()
+        print("You saw a wild creature!!!")
+
+tiger = Tiger()
+lion = Lion()
+person = Person()
 
 
-
-boat = Boat()
-car = Car()
-
-boat.go()
-car.go()
+person.saw(lion)
