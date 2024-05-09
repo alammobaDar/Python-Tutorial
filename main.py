@@ -1,28 +1,43 @@
-#Duct typing
-#Object Parameter
+def multiplier(x):
+    def multiplicant(y):
+        return y * x
+    return multiplicant
 
-class Tiger:
-    def roar(self):
-        print("The Tiger roared!")
+multiply = multiplier(23)
+print(multiply(5))
 
-    def hunt(self):
-        print("The tiger is hunting!!")
-class Lion:
-    def roar(self):
-        print("The Lion roared!")
+#this is where a funtion was returned
 
-    def hunt(self):
-        print("The lion is hunting!!")
+def loud(text):
+    return text.upper()
+def quiet(text):
+    return text.lower()
+def convey(func):
+    text = func("Maayong gabi sa inyo mga real niggas")
+    print(text)
 
-class Person():
-    def saw(self,tiger):
-        tiger.roar()
-        tiger.hunt()
-        print("You saw a wild creature!!!")
+convey(quiet)
 
-tiger = Tiger()
-lion = Lion()
-person = Person()
+# this is where a function becomes an object
 
 
-person.saw(lion)
+# without walrus operator
+
+# sports = list()
+# while True:
+#      sport = input("Enumerate the sports you know: ")
+#      if sport.lower() == "quit":
+#          break
+#      sports.append(sport)
+
+# with walrus operator
+
+sports = list()
+while sport := input("Enumerate the sports you know: ") != "quit":
+    sports.append(sport)
+
+for i in sports:
+    print(i)
+
+
+
