@@ -1,14 +1,20 @@
-# instead of using a function,
-# use a lambda function for short term function purposes only
 
-def add(x, y):
-    return x + y
+students = (("Darren", 3.9, 18),
+            ("Jonel", 3.9, 19),
+            ("Dan", 3.5, 18),
+            ("Luis", 4, 18),
+            ("Rj", 4, 18),
+            ("Tupe", 3.7, 18))
+# students.sort()
+# grade = lambda grades: grades[1]
+age = lambda ages: ages[2]
 
-print(add(5,30))
+# used a sort() method
+# students.sort(key= age, reverse= True)
 
-# here's lambda funtion
 
-multiply = lambda x,y: x * y
+#used a sort() function
+sorted_students = sorted(students, key= age)
 
-print(multiply(5,4))
-
+for i in sorted_students:
+    print(i)
