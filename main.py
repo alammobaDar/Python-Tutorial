@@ -1,43 +1,14 @@
-def multiplier(x):
-    def multiplicant(y):
-        return y * x
-    return multiplicant
+# instead of using a function,
+# use a lambda function for short term function purposes only
 
-multiply = multiplier(23)
-print(multiply(5))
+def add(x, y):
+    return x + y
 
-#this is where a funtion was returned
+print(add(5,30))
 
-def loud(text):
-    return text.upper()
-def quiet(text):
-    return text.lower()
-def convey(func):
-    text = func("Maayong gabi sa inyo mga real niggas")
-    print(text)
+# here's lambda funtion
 
-convey(quiet)
+multiply = lambda x,y: x * y
 
-# this is where a function becomes an object
-
-
-# without walrus operator
-
-# sports = list()
-# while True:
-#      sport = input("Enumerate the sports you know: ")
-#      if sport.lower() == "quit":
-#          break
-#      sports.append(sport)
-
-# with walrus operator
-
-sports = list()
-while sport := input("Enumerate the sports you know: ") != "quit":
-    sports.append(sport)
-
-for i in sports:
-    print(i)
-
-
+print(multiply(5,4))
 
