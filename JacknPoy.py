@@ -1,11 +1,10 @@
 import random
 
-Computer = ["Rock", "Paper",  "Scissor"]
-
-x = random.choice(Computer)
 print("Let's play Jack n' poy!!")
 
 while True:
+    Computer = ["Rock", "Paper",  "Scissor"]
+    x = random.choice(Computer)
 
     choice = input("Choose between (Rock, Paper, Scissor): ")
 
