@@ -1,21 +1,22 @@
+# map funtion
 
-students = (("Darren", 3.9, 18),
-            ("Jonel", 3.9, 19),
-            ("Dan", 3.5, 18),
-            ("Luis", 4, 18),
-            ("Rj", 4, 18),
-            ("Tupe", 3.7, 18))
-# students.sort()
-# grade = lambda grades: grades[1]
-age = lambda ages: ages[2]
+Auction =[("Deion", 187000),
+          ("Jamar", 205000),
+          ("Zhair", 168000),
+          ("Jaden", 197000),
+          ("Ethan", 700000)]
 
-# used a sort() method
-# students.sort(key= age, reverse= True)
+to_euros = lambda value: (value[0], value[1]*0.016)
+to_dollars = lambda value: (value[0], value[1]*0.017)
+to_yen = lambda value: (value[0], value[1]*2.71)
+to_won = lambda value: (value[0], value[1]*23.82)
+
+auction_slaves = list(map(to_won, Auction))
+
+value = lambda values: values[1]
+sorted_slaves = sorted(auction_slaves, key= value, reverse= True)
 
 
-#used a sort() function
-sorted_students = sorted(students, key= age)
-
-for i in sorted_students:
+for i in sorted_slaves:
     print(i)
 
