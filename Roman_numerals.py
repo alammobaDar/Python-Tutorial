@@ -43,11 +43,11 @@ while option not in ["A", "B"]:
 
 if option.upper() == "A":
     char = input("Input a roman numerals: ").upper()
-    print("The answer is: ", convert_roman(char))
+    print("The answer is: ", convert_roman(char), "!")
 
 elif option.upper() == "B":
     num = int(input("Input a number: "))
-    print("The answer is: ", convert_number(num))
+    print("The answer is: ", convert_number(num),"!")
 
 
 
