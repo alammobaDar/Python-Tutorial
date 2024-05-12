@@ -1,22 +1,42 @@
-# map funtion
+# reduce() function
+from functools import reduce
+# example of applications of reduce()
 
-Auction =[("Deion", 187000),
-          ("Jamar", 205000),
-          ("Zhair", 168000),
-          ("Jaden", 197000),
-          ("Ethan", 700000)]
+# Summarizing data :Calculating the sum, product,
+# maximum, or minimum value of a collection of data.
 
-to_euros = lambda value: (value[0], value[1]*0.016)
-to_dollars = lambda value: (value[0], value[1]*0.017)
-to_yen = lambda value: (value[0], value[1]*2.71)
-to_won = lambda value: (value[0], value[1]*23.82)
+numbers = [1, 2, 3, 4, 5, 6]
 
-auction_slaves = list(map(to_won, Auction))
+result = reduce(lambda x, y: x + y, numbers)
+print(numbers , "\nSum of Numbers: ", result)
 
-value = lambda values: values[1]
-sorted_slaves = sorted(auction_slaves, key= value, reverse= True)
+# Aggregating data: Combining data from multiple sources
+# or reducing a sequence of values to a single value.
+
+String = ["Edrich"," ", "Darren"," ", "Santuyo" ]
+combined_string = reduce(lambda x, y: x + y, String)
+print("\n",String , "\nCombined string: ", combined_string)
+
+## finds the largest number
+numbers1 = [54, 6, 99, 32, 17]
+largest = reduce(lambda x,y: x if x > y else y, numbers1)
+print("\n",numbers1, "\nThe largest number is: ", largest)
 
 
-for i in sorted_slaves:
-    print(i)
+
+# Iterative Operations:  Performing iterative operations
+# such as factorials, exponentiation, or any other
+# computation that requires combining elements of an iterable.
+
+def factorial(x):
+    return reduce(lambda x,y: x * y, range(1, x+1))
+print("\nThe result will be: ", factorial(5))
+
+# Functional programming: Implementing functional programming
+# concepts such as folding, reducing, or accumulating data.
+
+data = [14,82, 45,23,6]
+result = reduce(lambda x,y: x-y if x>y else y - x, data)
+print(data ,"\nThe result of the custom operation is: ", result)
+
 
