@@ -1,21 +1,30 @@
-# list comprehension
-## INSTEAD OF USING THIS:
+# Dictionary comprehension
 
-List = []
-for i in range(1,11):
-    List.append(i*i)
-print(List)
+c_cities = {"MANILA": 31, "CAVITE": 33, "TAGAYTAY": 25, "TUGUEGARAO": 37 }
+f_cities = {keys: round(value*(9/5))+32 for(keys, value) in c_cities.items()}
+print(f_cities)
 
-## Use this instead:
-list = [i * i for i in range (1,11)]
-print(list)
+#--------------------------------------------------
 
-### Examples:
+c_cities = {"MANILA": 31, "CAVITE": 33, "TAGAYTAY": 25, "TUGUEGARAO": 37 }
+sunny = {keys: value for(keys,value) in c_cities.items() if value <= 30}
+print(sunny)
 
-sections = [1,2,3,4,5,6,7,8,9,10,11,12]
+#--------------------------------------------------
 
-list = [i for i in sections if i <= 6]
-print("\nThe higher sections are: ", list)
+c_cities = {"MANILA": 31, "CAVITE": 33, "TAGAYTAY": 25, "TUGUEGARAO": 37 }
+disc_cities = {keys: ("warm" if value >=30  else "cold") for(keys, value) in c_cities.items()}
+print(disc_cities)
 
-list = [i if i <= 5 else str(i)+" (Lower section)" for i in sections]
-print("\nThe higher sections are: ", list)
+#--------------------------------------------------
+def temp(value):
+    if value > 33:
+        return "Hot"
+    elif value >= 33 >30:
+        return "Warm"
+    else:
+        return "Cold"
+
+c_cities = {"MANILA": 31, "CAVITE": 33, "TAGAYTAY": 25, "TUGUEGARAO": 37 }
+disc_cities = {keys: temp(value) for(keys, value) in c_cities.items()}
+print(disc_cities)
