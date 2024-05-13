@@ -1,30 +1,55 @@
-# Dictionary comprehension
+# zip function
+import pickle
 
-c_cities = {"MANILA": 31, "CAVITE": 33, "TAGAYTAY": 25, "TUGUEGARAO": 37 }
-f_cities = {keys: round(value*(9/5))+32 for(keys, value) in c_cities.items()}
-print(f_cities)
-
-#--------------------------------------------------
-
-c_cities = {"MANILA": 31, "CAVITE": 33, "TAGAYTAY": 25, "TUGUEGARAO": 37 }
-sunny = {keys: value for(keys,value) in c_cities.items() if value <= 30}
-print(sunny)
-
-#--------------------------------------------------
-
-c_cities = {"MANILA": 31, "CAVITE": 33, "TAGAYTAY": 25, "TUGUEGARAO": 37 }
-disc_cities = {keys: ("warm" if value >=30  else "cold") for(keys, value) in c_cities.items()}
-print(disc_cities)
-
-#--------------------------------------------------
-def temp(value):
-    if value > 33:
-        return "Hot!"
-    elif value >= 33 >30:
-        return "Warm!"
+def clear_data():
+    confirmation = input("Are you sure you want to erase all of the existing datas? (Y/N)").upper()
+    if confirmation == "Y":
+        with open("data.pickle", "wb") as file:
+            pickle.dump([], file)
+        print("succesfully deleted")
     else:
-        return "Cold!"
+        print("The datas remained")
 
-c_cities = {"MANILA": 31, "CAVITE": 33, "TAGAYTAY": 25, "TUGUEGARAO": 37 }
-disc_cities = {keys: temp(value) for(keys, value) in c_cities.items()}
-print(disc_cities)
+while True:
+    names = []
+    age = []
+    traits = []
+
+    try:
+        # Try to load data from a file named "data.pickle"
+        with open("data.pickle", "rb") as file:
+            names, age, traits = pickle.load(file)
+        # If the file doesn't exist, it's the first run
+    except FileNotFoundError:
+        pass
+    except (ValueError, pickle.UnpicklingError):
+        print("Empty list, start a new\n")
+
+
+    name1 = input("Enter a name: ")
+    age1 = int(input("Enter age: "))
+    traits1 = input("Enter traits: ")
+
+    names.append(name1)
+    age.append(age1)
+    traits.append(traits1)
+
+    with open("data.pickle", "wb") as file:
+        pickle.dump((names, age, traits), file)
+
+    exit = input("Do you want to exit? (Y/N)").upper()
+    if exit == "Y":
+        break
+
+erase = input("Do you want to erase the datas? (Y/N)").upper()
+if erase == "Y":
+     clear_data()
+
+else:
+
+    infos = list(zip(names, age, traits))
+    print("\nCharacters: ")
+    for i in infos:
+        print(i)
+    print("Thank you 3x")
+
