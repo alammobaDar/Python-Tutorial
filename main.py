@@ -19,11 +19,11 @@ print(disc_cities)
 #--------------------------------------------------
 def temp(value):
     if value > 33:
-        return "Hot"
+        return "Hot!"
     elif value >= 33 >30:
-        return "Warm"
+        return "Warm!"
     else:
-        return "Cold"
+        return "Cold!"
 
 c_cities = {"MANILA": 31, "CAVITE": 33, "TAGAYTAY": 25, "TUGUEGARAO": 37 }
 disc_cities = {keys: temp(value) for(keys, value) in c_cities.items()}
