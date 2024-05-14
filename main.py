@@ -1,55 +1,43 @@
-# zip function
-import pickle
+import threading
+import time
 
-def clear_data():
-    confirmation = input("Are you sure you want to erase all of the existing datas? (Y/N)").upper()
-    if confirmation == "Y":
-        with open("data.pickle", "wb") as file:
-            pickle.dump([], file)
-        print("succesfully deleted")
-    else:
-        print("The datas remained")
+def lalaki ():
 
-while True:
-    names = []
-    age = []
-    traits = []
+    time.sleep(1.5)
+    print("Mababaw lang naman kaligayahan ko ehh\n")
 
-    try:
-        # Try to load data from a file named "data.pickle"
-        with open("data.pickle", "rb") as file:
-            names, age, traits = pickle.load(file)
-        # If the file doesn't exist, it's the first run
-    except FileNotFoundError:
-        pass
-    except (ValueError, pickle.UnpicklingError):
-        print("Empty list, start a new\n")
+    time.sleep(2)
+    print("okay na sakin yung...\n")
+
+    time.sleep(1.5)
+    print("tipong...\n")
+
+    time.sleep(2.3)
+    print("Katulad mo..\n")
+
+    time.sleep(3)
+    print("Ou ahihi\n")
+
+def babai():
 
 
-    name1 = input("Enter a name: ")
-    age1 = int(input("Enter age: "))
-    traits1 = input("Enter traits: ")
+    print("Ikaw, ano pangarap mo sa buhay??\n")
 
-    names.append(name1)
-    age.append(age1)
-    traits.append(traits1)
 
-    with open("data.pickle", "wb") as file:
-        pickle.dump((names, age, traits), file)
 
-    exit = input("Do you want to exit? (Y/N)").upper()
-    if exit == "Y":
-        break
+    time.sleep(9)
+    print("Katulad ko??\n")
+# def reverse_count():
+#
+#     for i in range(10,0,-1):
+#         time.sleep(2)
+#         print(i)
 
-erase = input("Do you want to erase the datas? (Y/N)").upper()
-if erase == "Y":
-     clear_data()
+x = threading.Thread(target = babai)
 
-else:
+y = threading.Thread(target = lalaki)
+x.start()
+y.start()
 
-    infos = list(zip(names, age, traits))
-    print("\nCharacters: ")
-    for i in infos:
-        print(i)
-    print("Thank you 3x")
+
 
