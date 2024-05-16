@@ -1,13 +1,14 @@
-#Palindrome checker
+# fibonnacci sequence
 
-def is_palindrome(string):
-    reverse_string = string[::-1]
-    return reverse_string
+def fibonacci_sequence(num):
+    if num <= 1:
+        return num
+    else:
+        return fibonacci_sequence(num -1) + fibonacci_sequence(num -2)
+    fib_seq = [0,1]
+    return fib_seq.append([fibonacci_sequence(i) in range(num)])
 
-string = input("Enter a word: ").upper()
 
-reversed_string = is_palindrome(string)
-if reversed_string== string:
-    print(string," is a palindrome!")
-else:
-    print(string," is not a palindrome!")
+
+print(fibonacci_sequence(4))
+
