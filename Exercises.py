@@ -1,16 +1,37 @@
-# fibonnacci sequence
+# Prime numbers
 
-def fibonacci(num):
-    num1 = 0
-    num2 = 1
-    counter = 0
-    for i in range(num):
-        print(num1, end="\n" )
+def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5)+1):
+        print(i)
+        if num % i ==0:
+            return False
+    return True
 
-        num1 = num1 + num2
-        num2 = num1 - counter
-        counter = num2
+Enter a number: 53
+2
+3
+4
+5
+6
+7
+2
+3
+4
+5
+6
+7
+Its a prime
 
 num = int(input("Enter a number: "))
-fibonacci(num)
+is_prime(num)
 
+
+if is_prime(num)== True:
+    print("Its a prime")
+else:
+    print("Its, not")
+
+# for i in range(2, int(20**0.5)+1):
+#         print(i)
