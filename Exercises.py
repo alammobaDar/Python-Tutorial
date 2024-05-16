@@ -1,14 +1,16 @@
 # fibonnacci sequence
 
-def fibonacci_sequence(num):
-    if num <= 1:
-        return num
-    else:
-        return fibonacci_sequence(num -1) + fibonacci_sequence(num -2)
-    fib_seq = [0,1]
-    return fib_seq.append([fibonacci_sequence(i) in range(num)])
+def fibonacci(num):
+    num1 = 0
+    num2 = 1
+    counter = 0
+    for i in range(num):
+        print(num1, end="\n" )
 
+        num1 = num1 + num2
+        num2 = num1 - counter
+        counter = num2
 
-
-print(fibonacci_sequence(4))
+num = int(input("Enter a number: "))
+fibonacci(num)
 
