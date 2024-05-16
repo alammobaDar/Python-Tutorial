@@ -1,13 +1,13 @@
-# FizzBuzz
+#Palindrome checker
 
-for i in range(0,300):
-    if i % 3 == 0 and i % 5 == 0:
-        print("FizzBuzz")
-    elif i % 3 == 0:
-        print("fizz")
-    elif i % 4 == 0:
-        print("slavery")
-    elif i % 5 == 0:
-        print("buzz")
-    else:
-        print(i)
+def is_palindrome(string):
+    reverse_string = string[::-1]
+    return reverse_string
+
+string = input("Enter a word: ").upper()
+
+reversed_string = is_palindrome(string)
+if reversed_string== string:
+    print(string," is a palindrome!")
+else:
+    print(string," is not a palindrome!")
