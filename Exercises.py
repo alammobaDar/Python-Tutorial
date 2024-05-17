@@ -1,9 +1,8 @@
 # vowel counter
 
-def reverse_string(string):
-    for i in string[::-1]:
-        print(i, end ="")
-
+def reversed_string(string):
+    reversed = string[::-1]
+    print("The reversed string will be: ", reversed)
 
 string = input("Enter a string: ")
-reverse_string(string)
+reversed_string(string)
