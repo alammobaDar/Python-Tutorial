@@ -24,4 +24,4 @@ password = input("Enter a pasword: ")
 if is_valid(password):
     print("Your password is valid!")
 else:
-    print("Your password is not valid")
+    print("Your password is not valid!")
