@@ -1,11 +1,9 @@
 # vowel counter
 
-def vowel_counter(string):
-    counter = 0
-    for i in string[0:len(string)]:
-        if i == "a" or i == "e" or i == "i" or i == "o"or i == "u":
-            counter = counter + 1
-    print(counter)
+def reverse_string(string):
+    for i in string[::-1]:
+        print(i, end ="")
 
-string = input("Enter a string")
-vowel_counter(string)
+
+string = input("Enter a string: ")
+reverse_string(string)
