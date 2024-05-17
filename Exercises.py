@@ -1,17 +1,10 @@
-# Prime numbers
+# list comprehension
 
-def is_prime(num):
-    if num <= 1:
-        return False
-    for i in range(2, int(num ** 0.5) +1):
-        if num % i == 0:
-            return False
-    return True
+def square_list(num):
+    list = []
+    for i in range(num):
+        list.append(i*i)
+    print(list)
 
 num = int(input("Enter a number: "))
-is_prime(num)
-
-if is_prime(num):
-    print("It's a prime!")
-else:
-    print("it's not")
+square_list(num)
