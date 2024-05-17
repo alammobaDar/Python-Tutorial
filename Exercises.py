@@ -1,10 +1,11 @@
-# list comprehension
+# vowel counter
 
-def square_list(num):
-    list = []
-    for i in range(num):
-        list.append(i*i)
-    print(list)
+def vowel_counter(string):
+    counter = 0
+    for i in string[0:len(string)]:
+        if i == "a" or i == "e" or i == "i" or i == "o"or i == "u":
+            counter = counter + 1
+    print(counter)
 
-num = int(input("Enter a number: "))
-square_list(num)
+string = input("Enter a string")
+vowel_counter(string)
